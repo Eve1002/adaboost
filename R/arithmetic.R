@@ -31,8 +31,6 @@ adaboost_rt <- function(data, outcome_var, M) {
 
   for (m in 1:M) {
     model <- rpart(formula = as.formula(paste(outcome_variable, "~ .")), data = data, weights = weights)
-
-    #model <- rpart(y ~ ., data = data, weights = weights)
     predictions <- predict(model, data)
 
     # Calculate Loss function L
